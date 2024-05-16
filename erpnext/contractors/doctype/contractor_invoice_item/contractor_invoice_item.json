@@ -1,0 +1,158 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2024-04-21 12:10:36.269955",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "description",
+  "quantity_and_rate",
+  "uom",
+  "previous",
+  "current",
+  "accepted_qty",
+  "rate",
+  "sec_break2",
+  "subtotal",
+  "percentage",
+  "grand_total"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "columns": 1,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "oldfieldname": "item_code",
+   "oldfieldtype": "Link",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Description",
+   "oldfieldname": "description",
+   "oldfieldtype": "Small Text",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantity_and_rate",
+   "fieldtype": "Section Break",
+   "label": "Quantity and Rate"
+  },
+  {
+   "columns": 1,
+   "default": "Unit",
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "oldfieldname": "uom",
+   "oldfieldtype": "Link",
+   "options": "UOM",
+   "print_width": "100px",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "previous",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Previous",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "current",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Current",
+   "precision": "1",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "accepted_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Accepted Qty",
+   "precision": "1",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "columns": 1,
+   "default": "0",
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rate",
+   "oldfieldname": "import_rate",
+   "oldfieldtype": "Currency",
+   "precision": "1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_break2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "subtotal",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Subtotal",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "percentage",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Percentage",
+   "precision": "1",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "grand_total",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Grand Total",
+   "precision": "1",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-04-27 11:30:40.490133",
+ "modified_by": "Administrator",
+ "module": "Contractors",
+ "name": "Contractor Invoice Item",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

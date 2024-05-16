@@ -1,0 +1,524 @@
+{
+ "actions": [],
+ "allow_auto_repeat": 1,
+ "allow_import": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-04-21 12:11:47.893402",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "contractor_section",
+  "title",
+  "naming_series",
+  "invoice_number",
+  "transaction_date",
+  "column_break_7",
+  "contractor",
+  "contractor_group",
+  "is_master",
+  "company",
+  "accounting_dimensions_section",
+  "cost_center",
+  "dimension_col_break",
+  "project",
+  "currency_section_section",
+  "currency",
+  "exchange_rate",
+  "items_section",
+  "items",
+  "totals",
+  "discount",
+  "insurance",
+  "due_amount",
+  "invoice_amount",
+  "column_break_wrfo4",
+  "subtotal",
+  "grand_total",
+  "net_total",
+  "net_total_invoice_currency",
+  "discount_section",
+  "discount_percentage",
+  "discount_amount",
+  "discount_total",
+  "column_break_ky8bt",
+  "discount_percentage_amount",
+  "discount_description",
+  "section_break_evjcg",
+  "insurance_percentage",
+  "insurance_amount",
+  "insurance_total",
+  "column_break_frzze",
+  "insurance_percentage_amount",
+  "payments_tab",
+  "total_payments_section",
+  "total_payments",
+  "payments_section",
+  "payments_list",
+  "accounting_data_tab",
+  "accounting_data_section",
+  "contractor_account",
+  "work_account",
+  "invoice_status_section",
+  "status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "contractor_section",
+   "fieldtype": "Section Break",
+   "options": "fa fa-user"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "{contractor_name}",
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "no_copy": 1,
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "oldfieldname": "naming_series",
+   "oldfieldtype": "Select",
+   "options": "ACC-CABS-.YYYY.-",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "contractor",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_standard_filter": 1,
+   "label": "Contractor",
+   "oldfieldname": "supplier",
+   "oldfieldtype": "Link",
+   "options": "Supplier",
+   "print_hide": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "transaction_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date",
+   "oldfieldname": "transaction_date",
+   "oldfieldtype": "Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Creative LTD",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Company",
+   "oldfieldname": "company",
+   "oldfieldtype": "Link",
+   "options": "Company",
+   "print_hide": 1,
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions "
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dimension_col_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "oldfieldtype": "Section Break",
+   "options": "fa fa-shopping-cart"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "oldfieldname": "po_details",
+   "oldfieldtype": "Table",
+   "options": "Contractor Invoice Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "totals",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "label": "Discount",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "insurance",
+   "fieldtype": "Currency",
+   "label": "Insurance",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "due_amount",
+   "fieldtype": "Currency",
+   "label": "Due Amount",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wrfo4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "subtotal",
+   "fieldtype": "Currency",
+   "label": "Subtotal",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "discount_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Discount"
+  },
+  {
+   "fieldname": "discount_percentage",
+   "fieldtype": "Percent",
+   "label": "Discount Percentage"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "options": "currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_total",
+   "fieldtype": "Currency",
+   "label": "Discount Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ky8bt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_percentage_amount",
+   "fieldtype": "Float",
+   "label": "Discount Percentage Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "discount_description",
+   "fieldtype": "Data",
+   "label": "Discount Description"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_evjcg",
+   "fieldtype": "Section Break",
+   "label": "Insurance Deduction"
+  },
+  {
+   "fieldname": "insurance_percentage",
+   "fieldtype": "Percent",
+   "label": "Insurance Percentage"
+  },
+  {
+   "default": "0",
+   "fieldname": "insurance_amount",
+   "fieldtype": "Currency",
+   "label": "Insurance Amount",
+   "options": "currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "insurance_total",
+   "fieldtype": "Currency",
+   "label": "Insurance Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_frzze",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "insurance_percentage_amount",
+   "fieldtype": "Data",
+   "label": "Insurance Percentage Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payments_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payments"
+  },
+  {
+   "fieldname": "total_payments_section",
+   "fieldtype": "Section Break",
+   "label": "Total Payments"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "total_payments",
+   "fieldtype": "Currency",
+   "label": "Total Payments",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payments_section",
+   "fieldtype": "Section Break",
+   "label": "Payments"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "payments_list",
+   "fieldtype": "Table",
+   "label": "Payments List",
+   "options": "Contractor Payments",
+   "read_only": 1
+  },
+  {
+   "fieldname": "accounting_data_tab",
+   "fieldtype": "Tab Break",
+   "label": "Additional Info"
+  },
+  {
+   "fieldname": "accounting_data_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Info"
+  },
+  {
+   "default": "2/01/04/007 - Contractors - Cltd",
+   "fieldname": "contractor_account",
+   "fieldtype": "Link",
+   "label": "Contractor Account",
+   "options": "Account",
+   "read_only_depends_on": "eval:doc.invoice_number !== 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_account",
+   "fieldtype": "Link",
+   "label": "Work Account",
+   "options": "Account",
+   "read_only_depends_on": "eval:doc.invoice_number !== 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Contractor Invoice",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "currency_section_section",
+   "fieldtype": "Section Break",
+   "label": "Currency Section"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.currency !== 'EGP'",
+   "fieldname": "exchange_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate",
+   "precision": "2"
+  },
+  {
+   "default": "1",
+   "fieldname": "invoice_number",
+   "fieldtype": "Int",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Invoice Number",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "invoice_amount",
+   "fieldtype": "Currency",
+   "label": "Invoice Amount",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.currency !== 'EGP'",
+   "fieldname": "net_total_invoice_currency",
+   "fieldtype": "Currency",
+   "label": "Net Total (Company Currency)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contractor_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Contractor Group",
+   "options": "Supplier Group",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "is_master",
+   "fieldtype": "Check",
+   "in_filter": 1,
+   "in_standard_filter": 1,
+   "label": "Is Master"
+  },
+  {
+   "fieldname": "invoice_status_section",
+   "fieldtype": "Section Break",
+   "label": "Invoice Status"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nDraft\nSubmitted\nCanceled",
+   "reqd": 1
+  }
+ ],
+ "icon": "fa fa-file-text",
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-05-14 11:35:33.833915",
+ "modified_by": "Administrator",
+ "module": "Contractors",
+ "name": "Contractor Invoice",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Stock User"
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "Purchase Manager",
+   "write": 1
+  }
+ ],
+ "search_fields": "project",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "timeline_field": "contractor",
+ "title_field": "contractor",
+ "track_changes": 1
+}
